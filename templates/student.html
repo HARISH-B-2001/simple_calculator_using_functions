@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>main_page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheet.css')}}" />
+</head>
+
+<body>
+    <form action="/logout" method="post">
+        <button type="submit">Logout</button>
+    </form>
+    <h1 style="text-align: center; padding-top:1em;padding-bottom:1em;">
+        MAIN PAGE
+    </h1>
+    <form action="{{ url_for('add') }}" method="post">
+        <div1><label id="first">Enter the Question:</label>
+            <input style="border-radius: 0.5em;" type="text" name="post_name">
+        </div1>
+        <input type="submit">
+    </form>
+    <p>
+        <div>
+            <h3>Activities:</h3>
+            <ul>
+                {% for i in range(count) %}
+                <li>
+                    {{qn[i]}} = {{name[i]}} &emsp;<br>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </p>
+
+</body>
+
+</html>
